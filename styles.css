@@ -1,0 +1,132 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;     
+}
+
+.container1 {
+    max-width: 1200px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;    
+}
+
+.container2 {
+    max-width: 1200px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;    
+}
+
+.titulo1 h1 {
+    font-size: 2rem;    
+}
+
+.secao-principal {
+    background-image: url("img/b8961521ef4b968c5c4ee19f7daefcee.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;    
+    background-position: center center;
+    height: 86vh;    
+}
+
+.titulo2 {    
+    color: rgb(185, 185, 185);    
+    padding: 10px 0px 0px 0px;       
+    font-size: 4rem;    
+}
+
+.novo-item {
+    color: white;
+    display: flex;        
+}
+
+.novo-item:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#novo-input {
+    margin: 0;
+    border: 1px solid rgb(35, 32, 24);
+    width: 25%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#nova-quantidade {
+    margin: 0;
+    border: 1px solid rgb(35, 32, 24);
+    width: 8%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#novo-preco {
+    margin: 0;
+    border: 1px solid rgb(35, 32, 24);
+    width: 5%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.add-btn {
+    padding: 9px 10px;
+    background-color: rgb(35, 32, 24);
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+.add-btn:hover {
+    background-color: #A66F00;
+    color: white;
+}
+
+.itens-existentes {
+    margin-top: 80px;    
+    padding: 0;
+    display: flex;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 10px;
+    font-size: 18px;
+    transition: 0.2s;
+    text-align: start;
+}
+
+table {
+    background-color: white;
+    width: 50%;    
+}
+
+tr:nth-child(odd){
+    background-color: #eee;
+}
+
+th:nth-child(1){
+    width: 80%;
+}
+
+tr:hover {
+    background: rgb(185, 185, 185);
+}
+
+footer {
+    display: flex;
+    justify-content: start;
+}

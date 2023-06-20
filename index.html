@@ -12,33 +12,44 @@
 
 <body>
     <header>
-        <div class="title">
-            <h1>Lista de Compras</h1>
-        </div>
-        <div class="banner">
-            <img src="./img/b8961521ef4b968c5c4ee19f7daefcee.jpeg" alt="Um violão e um ukulele ">
+        <div class="titulo1 container1">
+            <h1>Terra Instruments</h1>
         </div>
     </header>
 
-    <!-- Opções para adicionar um novo item -->
-    <section class="novoItem">
-        <input type="text" id="novoInput" placeholder="Adicionar novo item:">
-        <input type="text" id="novaQuantidade" placeholder="Quantidade:">
-        <input type="text" id="novoPreco" placeholder="Valor:">
-        <span onclick="novoItem()" class="addBtn">Adicionar</span>
-    </section>
+    <main class="secao-principal">     
+    
+        <div class="container2">
+        
+            <h2 class="titulo2">Instrumentos de<br>qualidade para<br>músicos incríveis.</h2>      
+                       
+            <!-- Opções para adicionar um novo item -->
+            <section class="novo-item">        
+                <input type="text" id="novo-input" placeholder="Adicionar novo item:">
+                <input type="text" id="nova-quantidade" placeholder="Quantidade:">
+                <input type="text" id="novo-preco" placeholder="Valor:">
+                <span onclick="novoItem()" class="add-btn">Adicionar</span>
+            </section>
+            
+            <!-- Tabela com itens existentes -->
+            <section class="itens-existentes">
+                <table id="minha-tabela">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Quantidade</th>
+                        <th>Valor</th>
+                        <th><img src="https://cdn-icons-png.flaticon.com/512/126/126468.png" width="15px" height="15px"></th>
+                    </tr>
+                </table>
+            </section>
 
-    <!-- Tabela com itens existentes -->
-    <section class="itensExistentes">
-        <table id="minhaTabela">
-            <tr>
-                <th>Nome</th>
-                <th>Quantidade</th>
-                <th>Valor</th>
-                <th><img src="https://cdn-icons-png.flaticon.com/512/126/126468.png" width="15px" height="15px"></th>
-            </tr>
-        </table>
-    </section>
+    </div>
+
+    </main>       
+
+    <footer class="container1">
+        <p>Terra Instruments © Alguns direitos reservados.</p>
+    </footer>
 
     <script src="scripts.js"></script>
 </body>
