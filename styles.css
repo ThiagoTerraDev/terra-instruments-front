@@ -39,18 +39,18 @@ body {
     font-size: 4rem;    
 }
 
-.novo-item {
+.newItem {
     color: white;
     display: flex;        
 }
 
-.novo-item:after {
+.newItem:after {
     content: "";
     display: table;
     clear: both;
 }
 
-#novo-input {
+#newInput {
     margin: 0;
     border: 1px solid rgb(35, 32, 24);
     width: 25%;
@@ -58,7 +58,7 @@ body {
     font-size: 16px;
 }
 
-#nova-quantidade {
+#newQuantity {
     margin: 0;
     border: 1px solid rgb(35, 32, 24);
     width: 8%;
@@ -66,7 +66,7 @@ body {
     font-size: 16px;
 }
 
-#novo-preco {
+#newPrice {
     margin: 0;
     border: 1px solid rgb(35, 32, 24);
     width: 5%;
@@ -74,7 +74,7 @@ body {
     font-size: 16px;
 }
 
-.add-btn {
+.addBtn {
     padding: 9px 10px;
     background-color: rgb(35, 32, 24);
     color: white;
@@ -85,7 +85,7 @@ body {
     border-radius: 2px;
 }
 
-.add-btn:hover {
+.addBtn:hover {
     background-color: #A66F00;
     color: white;
 }
