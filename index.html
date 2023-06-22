@@ -6,25 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Raleway:wght@500&family=Roboto&display=swap" rel="stylesheet">
 
     <title>Terra Instruments</title>
 </head>
 
 <body>
-    <header>
-        <div class="titulo1 container1">
-            <h1>Terra Instruments</h1>
+    <header class="container1">
+        <div class="titulo1">
+            <h1>Terra Instruments</h1>            
         </div>
+        <div>
+            <a href="https://github.com/ThiagoTerraDev" target="_blank">
+                <img src="./img/github.svg" alt="icone GitHub" class="icon">
+            </a>
+        </div>
+        <div>
+            <a href="https://www.linkedin.com/in/thiago-terra-158a71266/" target="_blank">
+                <img src="./img/linkedin-in.svg" alt="icone LinkedIn" class="icon">
+            </a>   
+        </div> 
     </header>
 
     <main class="secao-principal">     
     
         <div class="container2">
         
-            <h2 class="titulo2">Instrumentos de<br>qualidade para<br>músicos incríveis.</h2>      
+            <h2 class="titulo2 fadeInLeft" data-anime="150">Instrumentos de<br>qualidade para<br>músicos incríveis.</h2>      
                        
             <!-- Opções para adicionar um novo item -->
-            <section class="newItem">        
+            <section class="newItem fadeInLeft" data-anime="150"">        
                 <input type="text" id="newInput" placeholder="Adicionar novo item:">
                 <input type="text" id="newQuantity" placeholder="Quantidade:">
                 <input type="text" id="newPrice" placeholder="Valor:">
@@ -32,7 +45,7 @@
             </section>
             
             <!-- Tabela com itens existentes -->
-            <section class="itens-existentes">
+            <section class="itens-existentes fadeInLeft" data-anime="150"">
                 <table id="minha-tabela">
                     <tr>
                         <th>Nome</th>
@@ -51,6 +64,7 @@
         <p>Terra Instruments © Alguns direitos reservados.</p>
     </footer>
 
+    <script src="simple-anime.js"></script>
     <script src="scripts.js"></script>
 </body>
 

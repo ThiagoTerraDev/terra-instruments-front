@@ -147,3 +147,13 @@ const insertList = (nameProduct, quantity, price) => {
 
     removeElement();
 }
+
+
+/*
+  --------------------------------------------------------------------------------------
+  Ativando plugin simple anime.
+  --------------------------------------------------------------------------------------
+*/
+if(window.SimpleAnime) {
+    new SimpleAnime();
+}

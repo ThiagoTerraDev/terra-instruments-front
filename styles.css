@@ -1,11 +1,13 @@
 body {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;     
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #eee;     
 }
 
 .container1 {
-    max-width: 1200px;
+    max-width: 1400px;
     padding-left: 20px;
     padding-right: 20px;
     margin-left: auto;
@@ -13,7 +15,7 @@ body {
 }
 
 .container2 {
-    max-width: 1200px;
+    max-width: 1400px;
     padding-left: 20px;
     padding-right: 20px;
     margin-left: auto;
@@ -22,7 +24,25 @@ body {
 }
 
 .titulo1 h1 {
-    font-size: 2rem;    
+    font-size: 1.6rem; 
+    font-family: 'Raleway', sans-serif;    
+}
+
+header {
+    display: grid;
+    grid-template-columns: 4fr 0.1fr 0.1fr;
+    justify-content: space-between;
+    align-items: center;
+    gap: 28px;
+}
+
+.icon {
+    width: 28px;
+    transition: 0.2s ease-in-out;
+}
+
+.icon:hover {
+    transform: scale(1.2);
 }
 
 .secao-principal {
@@ -30,17 +50,18 @@ body {
     background-size: cover;
     background-repeat: no-repeat;    
     background-position: center center;
-    height: 86vh;    
+    min-height: 100vh;    
 }
 
 .titulo2 {    
     color: rgb(185, 185, 185);    
-    padding: 10px 0px 0px 0px;       
-    font-size: 4rem;    
+    padding-top: 40px;      
+    font-size: 4rem;  
+    font-family: 'Poppins', sans-serif;  
 }
 
 .newItem {
-    color: white;
+    color: #eee;
     display: flex;        
 }
 
@@ -53,9 +74,9 @@ body {
 #newInput {
     margin: 0;
     border: 1px solid rgb(35, 32, 24);
-    width: 25%;
+    width: 20%;
     padding: 10px;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 #newQuantity {
@@ -63,7 +84,7 @@ body {
     border: 1px solid rgb(35, 32, 24);
     width: 8%;
     padding: 10px;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 #newPrice {
@@ -71,15 +92,15 @@ body {
     border: 1px solid rgb(35, 32, 24);
     width: 5%;
     padding: 10px;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .addBtn {
     padding: 9px 10px;
     background-color: rgb(35, 32, 24);
-    color: white;
+    color: #eee;
     text-align: center;
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
     transition: 0.3s;
     border-radius: 2px;
@@ -87,11 +108,15 @@ body {
 
 .addBtn:hover {
     background-color: #A66F00;
-    color: white;
+    color: #eee;
 }
 
+input::placeholder {
+    font-family: "Roboto", sans-serif;    
+}  
+
 .itens-existentes {
-    margin-top: 80px;    
+    margin-top: 40px;    
     padding: 0;
     display: flex;
 }
@@ -103,15 +128,15 @@ td {
     border-collapse: collapse;
     cursor: pointer;
     position: relative;
-    padding: 12px 8px 12px 10px;
-    font-size: 18px;
+    padding: 10px 6px 10px 8px;
+    font-size: 1rem;
     transition: 0.2s;
     text-align: start;
 }
 
 table {
-    background-color: white;
-    width: 50%;    
+    background-color: #eee;
+    width: 48%;    
 }
 
 tr:nth-child(odd){
@@ -119,7 +144,19 @@ tr:nth-child(odd){
 }
 
 th:nth-child(1){
-    width: 80%;
+    width: 40%;
+}
+
+th:nth-child(2){
+    width: 10%;
+}
+
+th:nth-child(3){
+    width: 12%;
+}
+
+th:nth-child(4){
+    width: 1%;
 }
 
 tr:hover {
@@ -128,5 +165,26 @@ tr:hover {
 
 footer {
     display: flex;
-    justify-content: start;
+    justify-content: center;    
 }
+
+
+/* Plugin simple anime */
+
+.fadeInLeft {
+    transform: translate3d(-20px, 0, 0);
+}
+
+[data-anime] {
+    opacity: 0;
+}
+
+.anime {
+    opacity: 1;
+    transform: none;
+    transition: transform 0.8s, opacity 0.8s;
+}
+
+
+/* Design responsivo com media queries */
+
