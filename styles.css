@@ -202,7 +202,7 @@ footer {
 @media (max-width: 1001px) {
     header {
         grid-template-columns: 4fr 0.2fr 0.2fr;
-        gap: 12px;
+        gap: 16px;
     }
 
     .titulo1 {
@@ -230,12 +230,12 @@ footer {
 @media (max-width: 601px) {
     header {
         grid-template-columns: 4fr 0.4fr 0.4fr;
-        gap: 16px;
+        gap: 4px;
     }    
 
     .titulo1 img {
-        width: 60%;
-    }
+        width: 40%;
+    }    
 
     .titulo2 {
         font-size: 2rem;
