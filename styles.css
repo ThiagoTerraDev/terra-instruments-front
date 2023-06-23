@@ -39,12 +39,19 @@ ul {
     list-style: none;
 }
 
-.icon {
-    width: 28px;
+.icon1 {
+    width: 27.13px;
+    height: 28px;
     transition: 0.2s ease-in-out;
 }
 
-.icon:hover {
+.icon2 {
+    width: 24.5px;
+    height: 28px;
+    transition: 0.2s ease-in-out;
+}
+
+.icon1:hover, .icon2:hover {
     transform: scale(1.2);
 }
 
@@ -211,8 +218,14 @@ footer {
         width: 24%;        
     }
 
-    .icon {
-        width: 20px;
+    .icon1 {
+        width: 19.38px;
+        height: 20px;
+    }
+
+    .icon2 {
+        width: 17.5px;
+        height: 20px;
     }
     
     .title2 {
