@@ -132,7 +132,7 @@ const newItem = () => {
 */
 const insertList = (nameProduct, quantity, price) => {
     var item = [nameProduct, quantity, price]
-    var table = document.getElementById('minha-tabela');
+    var table = document.getElementById('myTable');
     var row = table.insertRow();
 
     for (var i = 0; i < item.length; i++) {

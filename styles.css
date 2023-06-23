@@ -23,7 +23,7 @@ body {
     display: grid;    
 }
 
-.titulo1 {
+.title1 {
     padding-top: 18px;
     padding-bottom: 18px;
 }
@@ -45,7 +45,7 @@ header {
     transform: scale(1.2);
 }
 
-.secao-principal {
+.mainSession {
     background-image: url("img/img1-edit.jpg");
     background-size: cover;
     background-repeat: no-repeat;    
@@ -53,7 +53,7 @@ header {
     min-height: 100vh;            
 }
 
-.titulo2 {    
+.title2 {    
     color: rgb(185, 185, 185);    
     padding-top: 40px;      
     font-size: 4rem;  
@@ -115,7 +115,7 @@ input::placeholder {
     font-family: "Roboto", sans-serif;    
 }  
 
-.itens-existentes {
+.addedItems {
     margin-top: 40px;    
     padding: 0;
     display: flex;
@@ -205,12 +205,12 @@ footer {
         gap: 16px;
     }
 
-    .titulo1 {
+    .title1 {
         padding-top: 14px;
         padding-bottom: 14px;
     }
 
-    .titulo1 img {
+    .title1 img {
         width: 28%;
     }
 
@@ -218,11 +218,11 @@ footer {
         width: 20px;
     }
     
-    .titulo2 {
+    .title2 {
         font-size: 2.8rem;
     }
 
-    .secao-principal {
+    .mainSession {
         background-image: url("img/img-2.jpeg");
     }
 }
@@ -233,15 +233,19 @@ footer {
         gap: 4px;
     }    
 
-    .titulo1 img {
+    .title1 img {
         width: 40%;
     }    
 
-    .titulo2 {
+    .title2 {
         font-size: 2rem;
     }
 
-    .secao-principal {
+    .mainSession {
         background-image: url("img/img-3.jpeg");
+    }
+
+    footer p {
+        font-size: 0.7rem;
     }
 }
