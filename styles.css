@@ -23,17 +23,20 @@ body {
     display: grid;    
 }
 
-.title1 {
-    padding-top: 18px;
-    padding-bottom: 18px;
+.header {
+    display: flex;    
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
 }
 
-header {
-    display: grid;
-    grid-template-columns: 4fr 0.1fr 0.1fr;
-    justify-content: space-between;
-    align-items: center;
-    gap: 28px;
+.headerNav {
+    display: flex;
+    gap: 32px;
+}
+
+ul {
+    list-style: none;
 }
 
 .icon {
@@ -200,18 +203,12 @@ footer {
 }
 
 @media (max-width: 1001px) {
-    header {
-        grid-template-columns: 4fr 0.2fr 0.2fr;
-        gap: 16px;
+    .headerNav {
+        gap: 20px;
     }
 
     .title1 {
-        padding-top: 14px;
-        padding-bottom: 14px;
-    }
-
-    .title1 img {
-        width: 28%;
+        width: 24%;        
     }
 
     .icon {
@@ -228,14 +225,14 @@ footer {
 }
 
 @media (max-width: 601px) {
-    header {
-        grid-template-columns: 4fr 0.4fr 0.4fr;
-        gap: 4px;
-    }    
-
-    .title1 img {
-        width: 40%;
-    }    
+    .title1 {
+        width: 40%;        
+    }
+    
+    .headerNav {
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
 
     .title2 {
         font-size: 2rem;
