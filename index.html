@@ -44,18 +44,23 @@
             <h2 class="title2 fadeInLeft" data-anime="150">Instrumentos de<br>qualidade para<br>músicos incríveis.</h2>      
                        
             <!-- Opções para adicionar um novo item -->
-            <section class="newItem fadeInLeft" data-anime="150"">        
-                <input type="text" id="newInput" placeholder="Adicionar novo item:">
-                <input type="text" id="newQuantity" placeholder="Quantidade:">
-                <input type="text" id="newPrice" placeholder="Valor:">
-                <span onclick="newItem()" class="addBtn">Adicionar</span>
+            <section class="newItem fadeInLeft" data-anime="150">
+                <div>
+                    <input type="text" id="newInput" placeholder="Adicionar novo item:">
+                    <input type="text" id="newQuantity" placeholder="Quantidade:">
+                    <input type="text" id="newPrice" placeholder="Valor:">
+                </div>   
+                <input type="text" id="newComment" placeholder="Insira um comentário (Opcional):">
+                <div>
+                    <span onclick="newItem()" class="addBtn">Adicionar</span>                             
+                </div>
             </section>
             
             <!-- Tabela com itens existentes -->
             <section class="addedItems fadeInLeft" data-anime="150"">
                 <table id="myTable">
                     <tr>
-                        <th>Nome</th>
+                        <th>Item adicionado</th>
                         <th>Quantidade</th>
                         <th>Valor</th>
                         <th><img src="https://cdn-icons-png.flaticon.com/512/126/126468.png" alt="Trash icon" width="15px" height="15px"></th>

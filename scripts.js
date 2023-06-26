@@ -17,6 +17,7 @@ const getList = async () => {
         });        
 }
 
+
 /*
 --------------------------------------------------------------------------------------
 Chamada da função para carregamento inicial dos dados
@@ -37,14 +38,40 @@ const postItem = async (inputProduct, inputQuantity, inputPrice) => {
     formData.append('valor', inputPrice);
 
     let url = 'http://127.0.0.1:5000/produto';
-    fetch(url, {
+    return fetch(url, {
         method: 'post',
         body: formData
     })
-        .then((response) = response.json())
+        .then((response) => response.json())
         .catch((error) => {
             console.error('Error', error);
         });
+}
+
+
+/*
+  --------------------------------------------------------------------------------------
+  Função para postar um comentário na lista do servidor via requisição POST
+--------------------------------------------------------------------------------------
+*/
+const postComment = async (productId, inputComment) => {
+    const formData = new FormData();
+    formData.append('produto_id', productId)
+    formData.append('texto', inputComment);
+    
+    let url = 'http://127.0.0.1:5000/comentario';
+    try {
+        const response = await fetch(url, {
+            method: 'post',
+            body: formData
+        }); 
+        if (!response.ok) {
+            throw new Error('Failed to add comment');
+        }
+        return response.json();
+    } catch (error) {
+        console.error('Error', error);
+    }
 }
 
 
@@ -104,31 +131,54 @@ const deleteItem = (item) => {
 
 
 /*
-  --------------------------------------------------------------------------------------
-  Função para adicionar um novo item com nome, quantidade e valor 
-  --------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+Função para adicionar um novo comentário, apenas se algo foi inserido no campo.
+--------------------------------------------------------------------------------------
 */
-const newItem = () => {
-    let inputProduct = document.getElementById("newInput").value;
-    let inputQuantity = document.getElementById("newQuantity").value;
-    let inputPrice = document.getElementById("newPrice").value;
+const newComment = (productId) => {
+    let inputComment = document.getElementById("newComment").value;    
 
-    if (inputProduct === '') {
-        alert("Escreva o nome de um item!")        
-    } else if (isNaN(inputQuantity) || isNaN(inputPrice)) {
-        alert("Quantidade e valor precisam ser números!");
-    } else {
-        insertList(inputProduct, inputQuantity, inputPrice)
-        postItem(inputProduct, inputQuantity, inputPrice)
-        alert("Item adicionado!")
+    if (inputComment === '') {
+        // Se o input estiver vazio, não faz nada        
+    } else {        
+        postComment(productId, inputComment);       
     }
 }
 
 
 /*
-  --------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+Função para adicionar um novo item com nome, quantidade e valor 
+--------------------------------------------------------------------------------------
+*/
+ const newItem = () => {
+     let inputProduct = document.getElementById("newInput").value;
+     let inputQuantity = document.getElementById("newQuantity").value;
+     let inputPrice = document.getElementById("newPrice").value;
+     
+     if (inputProduct === '') {
+         alert("Escreva o nome de um item!")        
+        } else if (isNaN(inputQuantity) || isNaN(inputPrice)) {
+            alert("Quantidade e valor precisam ser números!");
+        } else {
+            postItem(inputProduct, inputQuantity, inputPrice)
+                .then(response => {
+                    const productId = response.id;
+                    insertList(inputProduct, inputQuantity, inputPrice);
+                    alert("Item adicionado!")
+                    newComment(productId);
+                })
+                .catch(error => {
+                    console.error('Error', error);
+                });
+        }
+} 
+ 
+
+/*
+--------------------------------------------------------------------------------------
   Função para inserir items na lista apresentada
-  --------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
 */
 const insertList = (nameProduct, quantity, price) => {
     var item = [nameProduct, quantity, price]
