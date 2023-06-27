@@ -10,7 +10,7 @@ const getList = async () => {
     })
         .then((response) => response.json())
         .then((data) => {
-            data.produtos.forEach(item => insertList(item.nome, item.quantidade, item.valor))
+            data.produtos.forEach(item => insertList(item.id, item.nome, item.quantidade, item.valor))
         })
         .catch((error) => {
             console.error('Error:', error)
@@ -50,7 +50,7 @@ const postItem = async (inputProduct, inputQuantity, inputPrice) => {
 
 
 /*
-  --------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
   Função para postar um comentário na lista do servidor via requisição POST
 --------------------------------------------------------------------------------------
 */
@@ -71,7 +71,7 @@ const postComment = async (productId, inputComment) => {
         return response.json();
     } catch (error) {
         console.error('Error', error);
-    }
+    }    
 }
 
 
@@ -101,11 +101,13 @@ const removeElement = () => {
     for (i = 0; i < close.length; i++) {
         close[i].onclick = function () {
             let div = this.parentElement.parentElement;
-            const nomeItem = div.getElementsByTagName('td')[0].innerHTML
+            const nomeItem = div.getElementsByTagName('td')[1].innerHTML
+            const idItem = div.getElementsByTagName('td')[0].innerHTML                     
             if (confirm("Você tem certeza?")) {
-                div.remove()
-                deleteItem(nomeItem)
-                alert("Removido!")
+                div.remove();
+                deleteItem(nomeItem);
+                deleteComment(idItem);                                           
+                alert("Removido!");
             }
         }
     }
@@ -131,6 +133,24 @@ const deleteItem = (item) => {
 
 
 /*
+  --------------------------------------------------------------------------------------
+  Função para deletar um comentário da lista do servidor via requisição DELETE
+  --------------------------------------------------------------------------------------
+*/
+const deleteComment = (produtoId) => {
+    console.log(produtoId)
+    let url = 'http://127.0.0.1:5000/comentario?produto_id=' + produtoId;
+    fetch(url, {
+        method: 'delete'
+    })
+        .then((response) => response.json())
+        .catch((error) => {
+            console.log('Error:', error);
+        });
+};
+
+
+/*
 --------------------------------------------------------------------------------------
 Função para adicionar um novo comentário, apenas se algo foi inserido no campo.
 --------------------------------------------------------------------------------------
@@ -141,37 +161,40 @@ const newComment = (productId) => {
     if (inputComment === '') {
         // Se o input estiver vazio, não faz nada        
     } else {        
-        postComment(productId, inputComment);       
+        postComment(productId, inputComment);
     }
 }
 
 
 /*
 --------------------------------------------------------------------------------------
-Função para adicionar um novo item com nome, quantidade e valor 
+Função para adicionar um novo item com id, nome, quantidade e valor 
 --------------------------------------------------------------------------------------
 */
- const newItem = () => {
-     let inputProduct = document.getElementById("newInput").value;
-     let inputQuantity = document.getElementById("newQuantity").value;
-     let inputPrice = document.getElementById("newPrice").value;
-     
-     if (inputProduct === '') {
-         alert("Escreva o nome de um item!")        
-        } else if (isNaN(inputQuantity) || isNaN(inputPrice)) {
-            alert("Quantidade e valor precisam ser números!");
-        } else {
-            postItem(inputProduct, inputQuantity, inputPrice)
-                .then(response => {
-                    const productId = response.id;
-                    insertList(inputProduct, inputQuantity, inputPrice);
-                    alert("Item adicionado!")
-                    newComment(productId);
-                })
-                .catch(error => {
-                    console.error('Error', error);
-                });
-        }
+const newItem = () => {
+    let inputId = document.getElementById("newId").value;
+    let inputProduct = document.getElementById("newInput").value;
+    let inputQuantity = document.getElementById("newQuantity").value;
+    let inputPrice = document.getElementById("newPrice").value;
+    
+    if (isNaN(inputId)) {
+        alert("Id precisa ser número!");
+    } else if (inputProduct === '') {
+        alert("Escreva o nome de um item!")        
+    } else if (isNaN(inputQuantity) || isNaN(inputPrice)) {
+        alert("Quantidade e valor precisam ser números!");
+    } else {
+        postItem(inputProduct, inputQuantity, inputPrice)
+        .then(response => {
+            const productId = response.id;
+            insertList(inputId, inputProduct, inputQuantity, inputPrice);
+            alert("Item adicionado!")
+            newComment(productId);
+        })
+        .catch(error => {
+            console.error('Error', error);
+        });
+    }
 } 
  
 
@@ -180,8 +203,8 @@ Função para adicionar um novo item com nome, quantidade e valor
   Função para inserir items na lista apresentada
 --------------------------------------------------------------------------------------
 */
-const insertList = (nameProduct, quantity, price) => {
-    var item = [nameProduct, quantity, price]
+const insertList = (idProduct, nameProduct, quantity, price) => {
+    var item = [idProduct, nameProduct, quantity, price]
     var table = document.getElementById('myTable');
     var row = table.insertRow();
 
@@ -191,11 +214,12 @@ const insertList = (nameProduct, quantity, price) => {
     }
 
     insertButton(row.insertCell(-1))
+    document.getElementById('newId').value = "";
     document.getElementById('newInput').value = "";
     document.getElementById('newQuantity').value = "";
     document.getElementById('newPrice').value = "";
 
-    removeElement();
+    removeElement();        
 }
 
 

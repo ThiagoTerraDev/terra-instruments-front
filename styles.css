@@ -84,9 +84,18 @@ ul {
     clear: both;
 }
 
+#newId {
+    margin-bottom: 10px;
+    margin-right: 4px;
+    border: 1px solid rgb(35, 32, 24);
+    width: 18%;
+    padding: 10px;    
+    font-size: 1rem;
+}
+
 #newInput {
     border: 1px solid rgb(35, 32, 24);
-    width: 48%;
+    width: 48.5%;
     margin-right: 4px;
     padding: 10px;
     font-size: 1rem;
@@ -96,27 +105,32 @@ ul {
     border: 1px solid rgb(35, 32, 24);
     width: 16%;
     padding: 10px;
-    margin-right: 4px;
     font-size: 1rem;
 }
 
 #newPrice {
     border: 1px solid rgb(35, 32, 24);
-    width: 12%;
+    margin-right: 4px;
+    width: 18%;
     padding: 10px;
     font-size: 1rem;
 }
 
 #newComment {
     margin-bottom: 10px;
+    margin-right: 4px;
     border: 1px solid rgb(35, 32, 24);
-    width: 87.3%;
+    width: 70%;
     padding: 10px;    
     font-size: 1rem;
 }
 
+.inputsA {
+    margin-bottom: -10px;
+}
+
 .addBtn {
-    padding: 9px 16px;
+    padding: 10px 26px;    
     background-color: rgb(82, 77, 69);
     color: #eee;
     text-align: center;        
@@ -150,13 +164,13 @@ td {
     padding: 10px 6px 10px 8px;
     font-size: 1rem;
     transition: 0.2s;
-    text-align: start;
+    text-align: center;
     color: white;
 }
 
 table {
     background-color: rgba(82, 77, 69, 0.5);
-    width: 48%;    
+    width: 42%;    
 }
 
 tr:nth-child(odd){
@@ -164,19 +178,23 @@ tr:nth-child(odd){
 }
 
 th:nth-child(1){
-    width: 36%;
+    width: 4%;
 }
 
 th:nth-child(2){
-    width: 10%;
+    width: 36%;
 }
 
 th:nth-child(3){
-    width: 12%;
+    width: 8%;
 }
 
 th:nth-child(4){
-    width: 1%;
+    width: 12%;
+}
+
+th:nth-child(5){
+    width: 4%;
 }
 
 th img {

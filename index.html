@@ -45,12 +45,15 @@
                        
             <!-- Opções para adicionar um novo item -->
             <section class="newItem fadeInLeft" data-anime="150">
-                <div>
-                    <input type="text" id="newInput" placeholder="Adicionar novo item:">
+                <div class="inputsA">
+                    <input type="text" id="newId" placeholder="Id do produto:">
+                    <input type="text" id="newInput" placeholder="Nome do produto:">
                     <input type="text" id="newQuantity" placeholder="Quantidade:">
+                </div>
+                <div class="inputsB">
                     <input type="text" id="newPrice" placeholder="Valor:">
+                    <input type="text" id="newComment" placeholder="Insira um comentário (Opcional):">
                 </div>   
-                <input type="text" id="newComment" placeholder="Insira um comentário (Opcional):">
                 <div>
                     <span onclick="newItem()" class="addBtn">Adicionar</span>                             
                 </div>
@@ -60,6 +63,7 @@
             <section class="addedItems fadeInLeft" data-anime="150"">
                 <table id="myTable">
                     <tr>
+                        <th>ID</th>
                         <th>Item adicionado</th>
                         <th>Quantidade</th>
                         <th>Valor</th>
