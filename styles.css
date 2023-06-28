@@ -68,7 +68,7 @@ ul {
     padding-top: 40px;      
     font-size: 4rem;  
     font-family: 'Poppins', sans-serif;
-    margin-bottom: 24px;  
+    margin-bottom: 44px;  
 }
 
 .newItem {
@@ -170,7 +170,7 @@ td {
 
 table {
     background-color: rgba(82, 77, 69, 0.5);
-    width: 42%;    
+    width: 526px;    
 }
 
 tr:nth-child(odd){
@@ -261,7 +261,8 @@ footer {
     }
     
     .title2 {
-        font-size: 2.8rem;
+        font-size: 3.6rem;
+        padding-top: 4px;      
     }
 
     .mainSession {
@@ -269,7 +270,7 @@ footer {
     }
 }
 
-@media (max-width: 601px) {
+@media (max-width: 600px) {
     .title1 {
         width: 40%;        
     }
@@ -280,12 +281,71 @@ footer {
     }
 
     .title2 {
+        padding-top: 20px;
+        margin-bottom: 20px;
         font-size: 2rem;
     }
 
     .mainSession {
         background-image: url("img/img-3.jpeg");
     }
+
+    .newItem {                
+        max-width: 280px;
+        display: grid;        
+        gap: 8px;              
+    }  
+        
+    #newId {
+        margin-bottom: 8px;      
+        width: 78vw;
+        font-size: .9rem;                 
+    }
+    
+    #newInput {
+        width: 78vw;        
+        margin-bottom: 8px;
+        font-size: .9rem;
+    }
+    
+    #newQuantity {        
+        width: 78vw; 
+        margin-bottom: 10px;
+        font-size: .9rem;
+    }
+    
+    #newPrice {        
+        width: 78vw; 
+        margin-bottom: 8px;
+        font-size: .9rem;
+    }
+    
+    #newComment {        
+        width: 78vw; 
+        margin-bottom: 10px;
+        font-size: .9rem;
+    }
+
+    .addBtn {
+        font-size: .9rem;
+        padding: 8px 20px;
+    }
+    
+    .inputsA {
+        margin-bottom: -10px;
+    }
+    
+    table,
+    th,
+    td {
+        padding: 6px 6px 6px 8px;
+        font-size: .9rem;   
+    }
+        
+    table {        
+        width: 84vw;
+        margin-bottom: 24px;    
+    }  
 
     footer p {
         font-size: 0.7rem;
