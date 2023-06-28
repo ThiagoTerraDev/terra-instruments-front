@@ -170,7 +170,8 @@ td {
 
 table {
     background-color: rgba(82, 77, 69, 0.5);
-    width: 526px;    
+    width: 526px;
+    margin-bottom: 40px;    
 }
 
 tr:nth-child(odd){
